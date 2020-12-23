@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="World" type="Spatial"]
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+transform = Transform( 35.5793, 0, 0, 0, 0.225074, 0, 0, 0, 29.5852, -0.0118389, -1.73747, 0 )
+use_collision = true
+mesh = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3735, 0.0993958 )
