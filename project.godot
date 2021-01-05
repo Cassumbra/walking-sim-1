@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/qodot/game_definitions/worldspawn_layers/liquid.gd"
 }, {
-"base": "Spatial",
-"class": "OrbitArm",
-"language": "GDScript",
-"path": "res://addons/qodot/example_scenes/2-miscallaneous/1-runtime-map-building/orbit_arm.gd"
-}, {
 "base": "PhysicsEntity",
 "class": "PhysicsBall",
 "language": "GDScript",
@@ -172,7 +167,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "LavaLayer": "",
 "LiquidLayer": "",
-"OrbitArm": "",
 "PhysicsBall": "",
 "PhysicsEntity": "",
 "QodotDependencies": "",
@@ -207,7 +201,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Walking Sim 1"
-run/main_scene="res://World.tscn"
+run/main_scene="res://maps/scenes/World.tscn"
 config/icon="res://icon.png"
 
 [editor_plugins]
@@ -239,6 +233,16 @@ movement_right={
 movement_jump={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
+movement_crouch={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"unicode":0,"echo":false,"script":null)
+ ]
+}
+interact_1={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 
