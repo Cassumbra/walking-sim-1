@@ -1,6 +1,3 @@
-#bullshit mode activated
-
-
 extends Spatial
 
 const MOUSE_SENSITIVITY = 0.05
