@@ -16,9 +16,9 @@ func _ready():
 
 func _on_Player_direction_changed(direction):
 	print("fucker")
-	head_check.cast_to = Vector3(10, 0, 0)
-	body_check.cast_to = Vector3(10, 0, 0)
-	feet_check.cast_to = Vector3(10, 0, 0)
+	head_check.cast_to = Vector3(-direction.x*1.5, 0, -direction.z*1.5)
+	body_check.cast_to = Vector3(-direction.x*1.5, 0, -direction.z*1.5)
+	feet_check.cast_to = Vector3(-direction.x*1.5, 0, -direction.z*1.5)
 
 func _on_Player_send_height(height):
 	head_check.translation.y = height/2
