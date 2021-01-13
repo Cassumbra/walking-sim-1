@@ -8,5 +8,5 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _on_Body_send_height(h):
-	translation.y = h + offset
+#func _on_Body_send_height(h):
+#	translation.y = h + offset
