@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/body.tscn" type="PackedScene" id=2]
+[ext_resource path="res://player/dir_checks.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/hud.tscn" type="PackedScene" id=4]
+
+[node name="Player" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Body" parent="." instance=ExtResource( 2 )]
+
+[node name="DirChecks" parent="." instance=ExtResource( 3 )]
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+[connection signal="direction_changed" from="." to="Body" method="_on_Player_direction_changed"]
+[connection signal="direction_changed" from="." to="DirChecks" method="_on_Player_direction_changed"]
+[connection signal="jump" from="." to="Body" method="_on_Player_jump"]
+[connection signal="send_height" from="." to="Body" method="_on_Player_send_height"]
+[connection signal="send_height" from="." to="DirChecks" method="_on_Player_send_height"]
+[connection signal="send_height" from="Body" to="DirChecks" method="_on_Body_send_height"]
+
+[editable path="Body"]
+
+[editable path="Body/Head"]
+
+[editable path="DirChecks"]
+
+[editable path="HUD"]
