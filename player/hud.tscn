@@ -17,56 +17,53 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -322.0
-margin_top = -126.0
-margin_right = 322.0
+margin_left = -443.0
+margin_top = -260.0
+margin_right = 443.0
 texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 63.0117, 62.2705 )
-patch_margin_left = 16
-patch_margin_top = 49
-patch_margin_right = 17
-patch_margin_bottom = 45
+patch_margin_left = 31
+patch_margin_top = 30
+patch_margin_right = 33
+patch_margin_bottom = 34
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Message" type="RichTextLabel" parent="MessagePanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -306.5
-margin_top = -51.0
-margin_right = 306.5
-margin_bottom = 51.0
+anchor_left = 0.031553
+anchor_top = 0.0886385
+anchor_right = 0.96
+anchor_bottom = 0.881
+margin_left = 0.0439997
+margin_top = -0.0460005
+margin_right = 0.440002
+margin_bottom = -0.0600128
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="FpsPanel" type="NinePatchRect" parent="."]
-anchor_left = 0.05
-anchor_top = 0.902
-anchor_right = 0.126
-anchor_bottom = 0.988
-margin_left = 0.453827
-margin_top = -0.0401001
-margin_right = -0.466171
-margin_bottom = 6.23999
+anchor_left = 0.00677083
+anchor_top = 0.821476
+anchor_right = 0.0463333
+anchor_bottom = 0.885294
+margin_top = 0.094986
+margin_right = 0.0400009
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 63.0117, 62.2705 )
-patch_margin_left = 16
-patch_margin_top = 49
-patch_margin_right = 17
-patch_margin_bottom = 45
+patch_margin_left = 29
+patch_margin_top = 33
+patch_margin_right = 31
+patch_margin_bottom = 32
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="Fps" type="RichTextLabel" parent="FpsPanel"]
-anchor_left = 0.11
-anchor_top = 0.149
-anchor_right = 0.869
-anchor_bottom = 0.809
+anchor_left = 0.173032
+anchor_top = 0.227121
+anchor_right = 0.816675
+anchor_bottom = 0.796967
 margin_left = 0.0499992
 margin_top = -0.00600052
 margin_right = -0.00500488
@@ -80,18 +77,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -16.0
-margin_top = -16.0
-margin_right = 16.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 8, 8 )
+margin_left = -63.52
+margin_top = -64.195
+margin_right = 64.48
+margin_bottom = 63.805
+rect_min_size = Vector2( 4, 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Crosshair" type="TextureRect" parent="CenterContainer"]
-margin_right = 32.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 96.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 64, 64 )
 texture = ExtResource( 2 )
 expand = true

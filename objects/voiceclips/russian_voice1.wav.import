@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/russian_voice1.wav-439c563a106f56de13840e8ec2dbecfd.sample"
+
+[deps]
+
+source_file="res://objects/voiceclips/russian_voice1.wav"
+dest_files=[ "res://.import/russian_voice1.wav-439c563a106f56de13840e8ec2dbecfd.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=1

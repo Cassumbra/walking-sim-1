@@ -27,8 +27,6 @@ TargetPath = NodePath("../Body")
 
 [editable path="Body"]
 
-[editable path="Body/Head"]
-
 [editable path="DirChecks"]
 
 [editable path="HUD"]

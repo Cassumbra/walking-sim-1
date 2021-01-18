@@ -25,10 +25,11 @@ func _process(_delta):
 	get_input()
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and Input.get_mouse_mode() != Input.MOUSE_MODE_VISIBLE:
 		body.rotate_y(deg2rad(-event.relative.x * MOUSE_SENSITIVITY))
 		head.rotate_x(deg2rad(-event.relative.y * MOUSE_SENSITIVITY))
 		head.rotation.x = clamp(head.rotation.x, -PI/2, PI/2)
+
 
 func get_input():
 	

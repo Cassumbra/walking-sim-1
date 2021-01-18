@@ -15,7 +15,7 @@ var talk = load("res://ui/talk.png")
 #	randomize()
 
 func _process(delta):
-	fps.set_text(str(Engine.get_frames_per_second()))
+	fps.set_text("FPS: " + str(Engine.get_frames_per_second()))
 
 func _on_Player_look_object(object, interact):
 	if typeof(object) == 4:
@@ -25,6 +25,8 @@ func _on_Player_look_object(object, interact):
 	elif object.interact_type == "talk":
 		crosshair.texture = talk
 	if interact:
+		object.play_sample()
+		print(str(object.get_children()))
 		if object.text_order == "random":
 			message.text = object.interact_text[randi() % object.interact_text.size()]
 		elif object.text_order == "ordered":

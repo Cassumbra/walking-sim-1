@@ -36,7 +36,7 @@ func _ready():
 	emit_signal("send_height", body_shape.scale.y)
 
 
-func _process(delta):
+func _physics_process(delta):
 	if jump:
 		if is_on_floor():
 			#move_speed = move_speed * 2
@@ -90,14 +90,13 @@ func _on_Player_crouch():
 func _on_Player_uncrouch():
 	move_speed = NORM_SPEED
 	body_shape.scale.y = NORM_HEIGHT
-	if is_on_floor(): move_and_collide(Vector3(0, body_shape.scale.y/3, 0))
+	#if is_on_floor(): move_and_collide(Vector3(0, body_shape.scale.y/9, 0))
 	emit_signal("send_height", body_shape.scale.y)
 
 
-func _on_DirChecks_can_step(y_displace):
+func _on_DirChecks_can_step():
 	if is_on_wall() and is_on_floor():
-		#print(str(y_displace))
-		move_and_collide(Vector3(0, y_displace-0.1, 0))
-		#move_and_collide(Vector3(direction.x/100, 0, direction.z/100))
-		
+		move_and_collide(Vector3(0, STEP_POWER, 0))
+		move_and_collide(Vector3(direction.x/10, 0, direction.z/10))
+		move_and_collide(Vector3(0, -100, 0))	
 
