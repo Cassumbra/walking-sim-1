@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cowpoke32color.png-7597f5cc18ce5a25645b10e5bd83bb1a.stex"
+path="res://.import/arizona_ranger8color.png-3057a89ecead26c0769847eaae7b2327.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/sprites/cowpoke32color.png"
-dest_files=[ "res://.import/cowpoke32color.png-7597f5cc18ce5a25645b10e5bd83bb1a.stex" ]
+source_file="res://objects/sprites/arizona_ranger8color.png"
+dest_files=[ "res://.import/arizona_ranger8color.png-3057a89ecead26c0769847eaae7b2327.stex" ]
 
 [params]
 
@@ -20,15 +20,15 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

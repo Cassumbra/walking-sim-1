@@ -1,0 +1,16 @@
+// Game: Qodot
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures/base"
+// brush 0
+{
+( -256 -256 -16 ) ( -256 -252 -16 ) ( -256 -256 -15 ) base/grass 0 0 0 4 1
+( -256 -256 -16 ) ( -256 -256 -15 ) ( -252 -256 -16 ) base/grass 0 0 0 4 1
+( -256 -256 -16 ) ( -252 -256 -16 ) ( -256 -252 -16 ) base/grass 0 0 0 4 4
+( 256 256 16 ) ( 256 260 16 ) ( 260 256 16 ) base/grass 0 0 0 4 4
+( 256 256 16 ) ( 260 256 16 ) ( 256 256 17 ) base/grass 0 0 0 4 1
+( 256 256 16 ) ( 256 256 17 ) ( 256 260 16 ) base/grass 0 0 0 4 1
+}
+}

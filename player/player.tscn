@@ -14,12 +14,16 @@ script = ExtResource( 1 )
 TargetPath = NodePath("../Body")
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+[connection signal="crouch" from="." to="Body" method="_on_Player_crouch"]
 [connection signal="direction_changed" from="." to="Body" method="_on_Player_direction_changed"]
 [connection signal="direction_changed" from="." to="DirChecks" method="_on_Player_direction_changed"]
 [connection signal="jump" from="." to="Body" method="_on_Player_jump"]
-[connection signal="send_height" from="." to="Body" method="_on_Player_send_height"]
-[connection signal="send_height" from="." to="DirChecks" method="_on_Player_send_height"]
+[connection signal="look_object" from="." to="HUD" method="_on_Player_look_object"]
+[connection signal="uncrouch" from="." to="Body" method="_on_Player_uncrouch"]
 [connection signal="send_height" from="Body" to="DirChecks" method="_on_Body_send_height"]
+[connection signal="tree_entered" from="Body/BodyShape" to="Body" method="_on_BodyShape_tree_entered"]
+[connection signal="look_object" from="Body/Head" to="." method="_on_Head_look_object"]
+[connection signal="can_step" from="DirChecks" to="Body" method="_on_DirChecks_can_step"]
 
 [editable path="Body"]
 

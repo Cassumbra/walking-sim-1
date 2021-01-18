@@ -204,6 +204,19 @@ config/name="Walking Sim 1"
 run/main_scene="res://maps/scenes/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global/global.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1020
+window/size/test_width=1920
+window/size/test_height=1020
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "qodot" )
@@ -243,6 +256,11 @@ movement_crouch={
 interact_1={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+ui_switch={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"unicode":0,"echo":false,"script":null)
  ]
 }
 

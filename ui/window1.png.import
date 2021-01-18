@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cowpoke8color.png-38aff0a23f88f92a29ecf36e4b5b8f6b.stex"
+path="res://.import/window1.png-71099580a5240d76e21cbeac5c4b9585.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/sprites/cowpoke8color.png"
-dest_files=[ "res://.import/cowpoke8color.png-38aff0a23f88f92a29ecf36e4b5b8f6b.stex" ]
+source_file="res://ui/window1.png"
+dest_files=[ "res://.import/window1.png-71099580a5240d76e21cbeac5c4b9585.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

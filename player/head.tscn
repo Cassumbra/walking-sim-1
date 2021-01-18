@@ -6,5 +6,8 @@
 script = ExtResource( 1 )
 
 [node name="Eyes" type="Camera" parent="."]
+far = 1000.0
 
-[node name="LookDir" type="RayCast" parent="."]
+[node name="LookDirection" type="RayCast" parent="."]
+enabled = true
+collision_mask = 4

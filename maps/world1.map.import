@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/world1.map-fc176cbda4dcf9c71e9f925ef397ced7.tres"
+
+[deps]
+
+source_file="res://maps/world1.map"
+dest_files=[ "res://.import/world1.map-fc176cbda4dcf9c71e9f925ef397ced7.tres" ]
+
+[params]
+

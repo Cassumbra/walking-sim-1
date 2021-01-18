@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://player/hud.gd" type="Script" id=1]
+[ext_resource path="res://ui/none.png" type="Texture" id=2]
+[ext_resource path="res://ui/window1.png" type="Texture" id=3]
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -10,11 +12,86 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Crosshair" type="TextureRect" parent="."]
-margin_left = 471.0
-margin_top = 267.0
-margin_right = 511.0
-margin_bottom = 307.0
+[node name="MessagePanel" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -322.0
+margin_top = -126.0
+margin_right = 322.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 63.0117, 62.2705 )
+patch_margin_left = 16
+patch_margin_top = 49
+patch_margin_right = 17
+patch_margin_bottom = 45
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Message" type="RichTextLabel" parent="MessagePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -306.5
+margin_top = -51.0
+margin_right = 306.5
+margin_bottom = 51.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FpsPanel" type="NinePatchRect" parent="."]
+anchor_left = 0.05
+anchor_top = 0.902
+anchor_right = 0.126
+anchor_bottom = 0.988
+margin_left = 0.453827
+margin_top = -0.0401001
+margin_right = -0.466171
+margin_bottom = 6.23999
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 63.0117, 62.2705 )
+patch_margin_left = 16
+patch_margin_top = 49
+patch_margin_right = 17
+patch_margin_bottom = 45
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Fps" type="RichTextLabel" parent="FpsPanel"]
+anchor_left = 0.11
+anchor_top = 0.149
+anchor_right = 0.869
+anchor_bottom = 0.809
+margin_left = 0.0499992
+margin_top = -0.00600052
+margin_right = -0.00500488
+margin_bottom = -0.0460052
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 8, 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crosshair" type="TextureRect" parent="CenterContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+texture = ExtResource( 2 )
+expand = true
