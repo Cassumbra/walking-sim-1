@@ -1,15 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://objects/object.gd" type="Script" id=1]
+[ext_resource path="res://objects/voiceclips/null.wav" type="AudioStream" id=2]
+[ext_resource path="res://objects/sprites/null.png" type="Texture" id=3]
+
+[sub_resource type="CylinderShape" id=1]
 
 [node name="Object" type="KinematicBody"]
 collision_layer = 4
 script = ExtResource( 1 )
+sprites = [ ExtResource( 3 ) ]
+voices = [ ExtResource( 2 ) ]
+rotation_type = "Flat"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+disabled = true
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.1
 alpha_cut = 2
+[connection signal="tree_entered" from="." to="." method="_on_Object_tree_entered"]

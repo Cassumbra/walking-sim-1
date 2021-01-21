@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://player/head.gd" type="Script" id=1]
+[ext_resource path="res://objects/object.tscn" type="PackedScene" id=2]
 
 [node name="Head" type="Spatial"]
 script = ExtResource( 1 )
@@ -11,3 +12,5 @@ far = 1000.0
 [node name="LookDirection" type="RayCast" parent="."]
 enabled = true
 collision_mask = 4
+
+[node name="Object" parent="." instance=ExtResource( 2 )]

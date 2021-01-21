@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/shrine1.map-172223ce7bebc1742e6f0311f592b28e.tres"
+
+[deps]
+
+source_file="res://maps/shrine1.map"
+dest_files=[ "res://.import/shrine1.map-172223ce7bebc1742e6f0311f592b28e.tres" ]
+
+[params]
+

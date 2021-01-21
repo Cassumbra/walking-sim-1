@@ -1,0 +1,11 @@
+dataworld immediate worklist
+-create object for moving player to new areas/scenes
+
+
+note: when adding new features/events to objects, i should create an object_behavior scene for this
+can practice this with the new object im going to create for moving player to new areas/scenes
+a scene_changer scene will need a few paramaters: what scene to change to, where to put player in the new scene
+
+perhaps for the second paramater, i could create another object and point that to the scene_changer scene rather than inputting xyz coordinates into the scene changer
+
+i could also potentially have scene changers link to eachother, and to allow one way transitions, i could simply remove one of the scene changers from being able to be interacted with

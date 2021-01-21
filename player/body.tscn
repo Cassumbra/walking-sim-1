@@ -14,4 +14,3 @@ shape = SubResource( 1 )
 
 [node name="Head" parent="." instance=ExtResource( 2 )]
 [connection signal="send_height" from="." to="Head" method="_on_Body_send_height"]
-[connection signal="ready" from="BodyShape" to="." method="_on_BodyShape_ready"]

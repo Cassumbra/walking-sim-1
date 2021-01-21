@@ -54,7 +54,7 @@ func _physics_process(delta):
 	movement.x = h_velocity.x + gravity_vec.x
 	movement.y = gravity_vec.y
 	
-	move_and_slide_with_snap(movement, snap, Vector3.UP, false, 4, PI/4)
+	movement = move_and_slide_with_snap(movement, snap, Vector3.UP, false, 4, PI/4)
 	
 	if not is_on_floor():
 		gravity_vec += Vector3.DOWN * GRAVITY * delta
@@ -100,3 +100,5 @@ func _on_DirChecks_can_step():
 		move_and_collide(Vector3(direction.x/10, 0, direction.z/10))
 		move_and_collide(Vector3(0, -100, 0))	
 
+func _on_BodyShape_tree_entered():
+	pass

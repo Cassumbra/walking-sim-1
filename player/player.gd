@@ -19,6 +19,7 @@ signal look_object(object, interact)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Global.load_player(get_tree().get_root().get_node("World/Player"))
 	
 
 func _process(_delta):
@@ -73,7 +74,7 @@ func get_input():
 
 
 func _on_Head_look_object(object):
-	if Input.is_action_just_pressed("interact_1") and typeof(object) != 4:
+	if Input.is_action_just_pressed("interact_1"):
 		emit_signal("look_object", object, true)
 	else:
 		emit_signal("look_object", object, false)

@@ -1,0 +1,30 @@
+player can build "upgrades" and "tools" from "metal"
+-"world" "stabilizer": decreases chance for "world" to "auto""corrupt".
+-corruption gun: shooting an object or part of the world corrupts it and then lowers the corruption value
+-purification gun: shooting an object or part of the world decorrupts it and raises the corruption value
+-pickaxe: mine "metal" from the world without increasing corruption value
+-"mind"link: turns you into an android irreperably. you can attach a link to any corrupted living entity. you gain a movement bonus for each entity you're linked to which has been decorrupted
+
+autocorruptions occur when a player travels from one location to another. the chance of this happening is based on the corruption value and when it happens, the corruption value is lowered.
+
+player can build machines which extract "metal" from the "world". extracting "metal" increases the corruption value
+-"gold": this "metal" can be used to create circuits and other computational pieces. by extracting it from this "world", "you" have removed vital parts of its stabilizing essence. this will have consequences.
+-shieldingstone: this "metal" can be used to encase and construct mechanical pieces. by extracting it from this "world, "you" have removed vital parts of its stabilizing essence. this will have consequences.
+
+player may need to corrupt or decorrupt objects/ world parts to get to new areas or talk to entities which start corrupted
+
+
+what does corruption mean? by doing it, have you reduced the value of the world or taken things away from it? or have you created new possibilities and unique aspects of the world?
+alternatively, perhaps the corruption of the world truly has diminished the "value" of the world. corrupting the world can remove parts of it, and even though in doing so, you may create new parts; these new parts may be false constructions of the old: weak and inferior. also, what consent have you received from the inhabitants of this world to further the corruption of it? what consent have you received from the world itself?
+how much can you change and reconfigure while keeping your true essence intact? how much does it matter to you?
+
+
+need to use guitar sound or car crash sound for dismantling a machine
+
+
+
+corruption_percent = tanh(corruption * n)
+n = 0.01
+
+corruption_percent >= rand1-100
+if true, corrupt and then decrease corruption

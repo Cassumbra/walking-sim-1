@@ -5,8 +5,11 @@ onready var eyes = $Eyes
 
 onready var look_direction = $LookDirection
 var look_distance = 12
-var object
 signal look_object(object)
+
+onready var default_object = $Object
+var object
+
 
 func _process(_delta):
 	look_direction.cast_to = Vector3(0, 0, -look_distance)
@@ -15,8 +18,7 @@ func _process(_delta):
 		object = look_direction.get_collider()
 		emit_signal("look_object", object)
 	else:
-		object = "none"
-		emit_signal("look_object", object)
+		emit_signal("look_object", default_object)
 		
 
 func _on_Body_send_height(height):
