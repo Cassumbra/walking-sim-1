@@ -19,7 +19,6 @@ signal look_object(object, interact)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	Global.load_player(get_tree().get_root().get_node("World/Player"))
 	
 
 func _process(_delta):

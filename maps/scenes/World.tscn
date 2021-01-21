@@ -320,7 +320,7 @@ shadow_enabled = true
 shadow_color = Color( 0.607843, 0.8, 1, 1 )
 
 [node name="Opening" parent="." instance=ExtResource( 7 )]
-transform = Transform( -3.25841e-07, 0, 1, 0, 2, 0, -2, 0, -1.62921e-07, 11.1249, 4.08405, 8.08328 )
+transform = Transform( -3.25841e-07, 0, 1, 0, 2, 0, -2, 0, -1.62921e-07, 15.7898, 4.08405, 8.08328 )
 interact_type = "Interact"
 interact_text = [ "" ]
 
