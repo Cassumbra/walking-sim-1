@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/talk.png-4fcd739f7af1ef7531d730339ad8741e.stex"
+path="res://.import/loading_cry.png-b755994a8c3059aa02adb0229deb506d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/talk.png"
-dest_files=[ "res://.import/talk.png-4fcd739f7af1ef7531d730339ad8741e.stex" ]
+source_file="res://ui/loading_cry.png"
+dest_files=[ "res://.import/loading_cry.png-b755994a8c3059aa02adb0229deb506d.stex" ]
 
 [params]
 

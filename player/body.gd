@@ -23,7 +23,7 @@ var h_velocity = Vector3()
 var snap = Vector3()
 var gravity_vec = Vector3()
 
-const NORM_JUMP_QUEUE = 0.1
+const NORM_JUMP_QUEUE = 0.15
 var jump_queue = NORM_JUMP_QUEUE
 var jump = false
 

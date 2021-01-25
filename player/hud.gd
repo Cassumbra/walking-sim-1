@@ -3,6 +3,8 @@ extends Control
 onready var crosshair = $CenterContainer/Crosshair
 onready var message = $MessagePanel/Message
 onready var fps = $FpsPanel/Fps
+onready var animation_player = $AnimationPlayer
+onready var color_rect = $ColorRect
 var player
 
 var texture_none = load("res://ui/none.png")
@@ -37,3 +39,6 @@ func _on_Player_look_object(object, interact):
 
 func _on_Player_tree_entered():
 	player = get_parent()
+	
+func _on_Main_change_scene():
+	print("Its time to do fade shitt!!!")

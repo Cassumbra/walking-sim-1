@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/bed.map-a78a948ae892d3681b8c1386ac22399c.tres"
+
+[deps]
+
+source_file="res://maps/bed.map"
+dest_files=[ "res://.import/bed.map-a78a948ae892d3681b8c1386ac22399c.tres" ]
+
+[params]
+

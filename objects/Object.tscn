@@ -18,8 +18,9 @@ shape = SubResource( 1 )
 disabled = true
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="."]
+unit_db = 4.0
+max_db = 6.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.1
 alpha_cut = 2
-[connection signal="tree_entered" from="." to="." method="_on_Object_tree_entered"]

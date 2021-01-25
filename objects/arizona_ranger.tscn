@@ -14,6 +14,7 @@ interact_type = "Interact"
 interact_text = [ "Howdy." ]
 sprites = [ ExtResource( 3 ) ]
 voices = [ ExtResource( 2 ) ]
+rotation_type = "Y-Billboard"
 
 [node name="CollisionShape" parent="." index="0"]
 transform = Transform( 1, 0, 0, 0, -2.18557e-08, -1, 0, 0.5, -4.37114e-08, 0, 0, 0 )

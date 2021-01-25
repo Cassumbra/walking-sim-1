@@ -15,8 +15,8 @@ TargetPath = NodePath("../Body")
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 [connection signal="crouch" from="." to="Body" method="_on_Player_crouch"]
-[connection signal="direction_changed" from="." to="DirChecks" method="_on_Player_direction_changed"]
 [connection signal="direction_changed" from="." to="Body" method="_on_Player_direction_changed"]
+[connection signal="direction_changed" from="." to="DirChecks" method="_on_Player_direction_changed"]
 [connection signal="jump" from="." to="Body" method="_on_Player_jump"]
 [connection signal="look_object" from="." to="HUD" method="_on_Player_look_object"]
 [connection signal="tree_entered" from="." to="HUD" method="_on_Player_tree_entered"]

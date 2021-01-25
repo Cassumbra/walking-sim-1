@@ -50,7 +50,7 @@ func get_input():
 	emit_signal("direction_changed", direction)
 	
 	#Jumpy
-	if Input.is_action_just_pressed("movement_jump") and not Input.is_action_pressed("movement_crouch"):
+	if Input.is_action_just_pressed("movement_jump"):
 		emit_signal("jump")
 		
 	#Crouchy

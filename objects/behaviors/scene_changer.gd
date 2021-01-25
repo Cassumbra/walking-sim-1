@@ -6,14 +6,20 @@ var player
 
 export(String, FILE) var to_scene_path
 export var to_location = Vector3()
+export var rotation = Vector3()
+
+signal change_scene(from_scene, to_scene_path, to_location)
 
 func _ready():
-	yield(get_tree().root, "ready")
 	object = get_parent()
 	from_scene = object.get_parent()
+	print(get_main().name)
+	connect("change_scene", get_main(), "change_world")
+
+
 
 func _on_interact(interactor):
-	pass
+	emit_signal("change_scene", from_scene, to_scene_path, to_location, rotation)
 
-func get_world():
-	return get_tree().get_root().get_node("World")
+func get_main():
+	return get_tree().get_root().get_node("Main")

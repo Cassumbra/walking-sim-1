@@ -8,7 +8,9 @@
 extents = Vector3( 3.15951, 3.10002, 0.122631 )
 
 [node name="Opening" instance=ExtResource( 1 )]
+interact_text = [ "" ]
 sprites = [ ExtResource( 2 ) ]
+static = true
 
 [node name="CollisionShape" parent="." index="0"]
 shape = SubResource( 1 )
