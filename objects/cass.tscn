@@ -5,8 +5,8 @@
 [ext_resource path="res://objects/voiceclips/cass_voice1.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 1.24463
-height = 2.27806
+radius = 1.49257
+height = 4.70387
 
 [node name="Cass" instance=ExtResource( 1 )]
 object_name = "Cass"
@@ -17,10 +17,11 @@ voices = [ ExtResource( 3 ) ]
 rotation_type = "Y-Billboard Flip"
 
 [node name="CollisionShape" parent="." index="0"]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 1 )
-disabled = false
+
+[node name="Voice" parent="." index="1"]
+unit_db = 8.0
 
 [node name="Sprite3D" parent="." index="2"]
-transform = Transform( 0.33, 0, 0, 0, 0.33, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 0.4, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0 )
 texture = ExtResource( 2 )

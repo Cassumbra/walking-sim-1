@@ -2,35 +2,33 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wood_planks_normal.png-4958dd588413139346c3f9da16d0904f.s3tc.stex"
-path.etc2="res://.import/wood_planks_normal.png-4958dd588413139346c3f9da16d0904f.etc2.stex"
+path="res://.import/wood_planks_normal.png-4958dd588413139346c3f9da16d0904f.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://maps/textures/base/wood_planks_normal.png"
-dest_files=[ "res://.import/wood_planks_normal.png-4958dd588413139346c3f9da16d0904f.s3tc.stex", "res://.import/wood_planks_normal.png-4958dd588413139346c3f9da16d0904f.etc2.stex" ]
+dest_files=[ "res://.import/wood_planks_normal.png-4958dd588413139346c3f9da16d0904f.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=1
-flags/repeat=true
-flags/filter=true
-flags/mipmaps=true
+flags/repeat=1
+flags/filter=false
+flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-stream=false
+stream=0
 size_limit=0
 detect_3d=false
 svg/scale=1.0

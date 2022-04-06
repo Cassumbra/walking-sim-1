@@ -42,5 +42,5 @@ func _on_Player_direction_changed(d):
 
 func _on_Body_send_height(height):
 	head_check.translation.y = height
-	body_check.translation.y = -height + height/1.5
+	body_check.translation.y = -height + height/1.5 + 0.1
 	feet_check.translation.y = -height + 0.1

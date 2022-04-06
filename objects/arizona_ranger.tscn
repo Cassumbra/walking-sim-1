@@ -5,25 +5,19 @@
 [ext_resource path="res://objects/sprites/arizona_ranger8color.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 1.45045
-height = 3.07184
+radius = 1.51645
+height = 2.80796
 
 [node name="ArizonaRanger" instance=ExtResource( 1 )]
 object_name = "Arizona Ranger"
-interact_type = "Interact"
+interact_type = "Talk"
 interact_text = [ "Howdy." ]
 sprites = [ ExtResource( 3 ) ]
 voices = [ ExtResource( 2 ) ]
 rotation_type = "Y-Billboard"
 
 [node name="CollisionShape" parent="." index="0"]
-transform = Transform( 1, 0, 0, 0, -2.18557e-08, -1, 0, 0.5, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
-disabled = false
-
-[node name="Voice" parent="." index="1"]
-unit_db = 4.0
-max_db = 6.0
 
 [node name="Sprite3D" parent="." index="2"]
 pixel_size = 0.05

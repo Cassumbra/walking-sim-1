@@ -5,7 +5,15 @@ onready var message = $MessagePanel/Message
 onready var fps = $FpsPanel/Fps
 onready var animation_player = $AnimationPlayer
 onready var color_rect = $ColorRect
+
+onready var transition = $Transition
+onready var click = $Transition/Click1
+onready var transition_timer = $Transition/Timer
+
 var player
+var line_number = 0
+var line_count
+
 
 var texture_none = load("res://ui/none.png")
 var texture_interact = load("res://ui/interact.png")
@@ -30,9 +38,9 @@ func _on_Player_look_object(object, interact):
 		#print(str(player))
 		object.interact(player)
 		if object.text_order == "Random":
-			message.text = object.interact_text[randi() % object.interact_text.size()]
+			message.text = object.object_name + " SAYS:" + object.interact_text[randi() % object.interact_text.size()]
 		elif object.text_order == "Ordered":
-			message.text = object.interact_text[object.text_pointer]
+			message.text = object.object_name + " SAYS: " + object.interact_text[object.text_pointer]
 			object.text_pointer += 1
 			if object.text_pointer > object.interact_text.size() - 1:
 				object.text_pointer = 0
@@ -40,5 +48,26 @@ func _on_Player_look_object(object, interact):
 func _on_Player_tree_entered():
 	player = get_parent()
 	
-func _on_Main_change_scene():
-	print("Its time to do fade shitt!!!")
+func scene_transition():
+	transition.show()
+	click.play()
+	transition_timer.start(0.33)
+
+func _on_Player_scroll(direction):
+	if direction == "down":
+		line_number += 1
+		if line_number > message.get_line_count() - 1:
+			line_number = message.get_line_count() - 1
+	elif direction == "up":
+		line_number-= 1
+		if line_number < 0:
+			line_number = 0
+	elif direction == "reset":
+		line_number = 0
+		
+	message.scroll_to_line(line_number)
+
+func _on_Timer_timeout():
+	click.play()
+	transition.hide()
+	message.text = "Welcome to the next area!"

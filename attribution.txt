@@ -1,3 +1,16 @@
 attribution
 russian masc voicelines: sextius
+
+
 scene transition noise: psiborg jhin
+
+
+photo i used to make cass sprite: Victoria Borodinova
+https://pixabay.com/photos/magic-witch-the-middle-ages-2974384/
+
+
+font: Dogica, by Roberto Mocci
+https://fontlibrary.org/en/font/dogica
+
+attribution for this game
+if you run a business where your workers do not own all of the shares in the company equally AND there is no democratic process in your business, you may not use this game's code or resources under ANY circumstances, commercial or noncommercial. otherwise, you are encouraged to do what you like with the assets in this game (i'd also like to see your work and be attributed, but neither of those two conditions are obligatory)

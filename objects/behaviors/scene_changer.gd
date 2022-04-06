@@ -13,7 +13,6 @@ signal change_scene(from_scene, to_scene_path, to_location)
 func _ready():
 	object = get_parent()
 	from_scene = object.get_parent()
-	print(get_main().name)
 	connect("change_scene", get_main(), "change_world")
 
 

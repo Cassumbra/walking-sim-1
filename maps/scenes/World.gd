@@ -4,6 +4,7 @@ signal send_player(player)
 
 var player
 
+
 func _on_Main_send_player(p):
 	player = p
 	emit_signal("send_player", player)

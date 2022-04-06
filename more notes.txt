@@ -1,0 +1,19 @@
+problems:
+every object generally needs to know where the player is, this is annoying to set up
+the world and main need to know where all the objects are, this is annoying to set up
+composition of the player object is somewhat muddled, the player has componenets, but some of those componenets are made of other components
+
+thoughts:
+what do i even need a global object for? i have the main script already. any sort of global nonsense can just go there
+having a main script that manages other scripts and objects is fine, thats not what the "god class" antipattern refers to. the "god class" antipattern is more about putting all of your functionality in one class. in my instance, i'd be putting functionality in a bunch of classes and then when i go and want to process time and have things happen, my main script would call on things to do stuff
+
+
+
+
+
+
+yooo i just got a game idea
+what if u can uhh
+pause the game but continue to be able to move while the game is paused
+
+#ed2aff

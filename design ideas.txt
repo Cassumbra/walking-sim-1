@@ -1,3 +1,8 @@
+constantly reference a talking mechanic (ie: "Press [B] to talk!" or "I've found that [TALK]-ing can be a really good way of conveying your feelings, you can try it by pressing [B]") but don't actually implement a talking mechanic or implement it in a limited way that doesn't correspond to what is said about the talking mechanic
+this would maybe help with conveying how as much as i try to convey my feelings and thoughts its never enough
+
+
+old stuff down here:
 player can build "upgrades" and "tools" from "metal"
 -"world" "stabilizer": decreases chance for "world" to "auto""corrupt".
 -corruption gun: shooting an object or part of the world corrupts it and then lowers the corruption value

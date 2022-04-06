@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gobloid_1.wav-4983b2d9e27040fe9cb811a2645f57a9.sample"
+
+[deps]
+
+source_file="res://objects/voiceclips/gobloid_1.wav"
+dest_files=[ "res://.import/gobloid_1.wav-4983b2d9e27040fe9cb811a2645f57a9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

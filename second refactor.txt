@@ -1,0 +1,11 @@
+things for second refactor!
+
+-make adding new maps more streamlined
+-make some models in blender?
+-make it so that objects can be added and have their properties modified in qodot (streamline this so that objects are automagically added to qodot when they're in the right folder and a pseudobutton is pressed.)
+-make it so that player and other objects are defined from same source ie: (
+>obj
+>>player
+>>tree
+>>barbarian )
+

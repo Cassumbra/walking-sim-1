@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://player/hud.gd" type="Script" id=1]
 [ext_resource path="res://ui/none.png" type="Texture" id=2]
 [ext_resource path="res://ui/window1.png" type="Texture" id=3]
 [ext_resource path="res://ui/loading_cry.png" type="Texture" id=4]
+[ext_resource path="res://fonts/TTF/dogica.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://fonts/TTF/dogicabold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://sound/click1.wav" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+extra_spacing_top = 10
+font_data = ExtResource( 5 )
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
@@ -39,6 +49,11 @@ margin_left = 0.0439997
 margin_top = -0.0460005
 margin_right = 0.440002
 margin_bottom = -0.0600128
+custom_fonts/bold_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "WASD to move. Mouse to turn. You can click on some things to interact with them.
+
+Press [KEY_LASER] to fire your laser."
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -98,15 +113,15 @@ expand = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[node name="Control" type="Control" parent="."]
+[node name="Transition" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-visible = false
+[node name="ColorRect" type="ColorRect" parent="Transition"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
@@ -114,8 +129,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
-visible = false
+[node name="TextureRect" type="TextureRect" parent="Transition"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -127,3 +141,12 @@ margin_bottom = 510.0
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
+
+[node name="Click1" type="AudioStreamPlayer" parent="Transition"]
+stream = ExtResource( 7 )
+volume_db = -10.0
+
+[node name="Timer" type="Timer" parent="Transition"]
+wait_time = 0.25
+one_shot = true
+[connection signal="timeout" from="Transition/Timer" to="." method="_on_Timer_timeout"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [sub_resource type="SphereMesh" id=1]
-radius = 0.5
-height = 1.0
+radius = 2.5
+height = 5.0
 
 [sub_resource type="SphereShape" id=2]
-radius = 0.5
+radius = 2.5
 
 [node name="PhysicsBall" type="RigidBody"]
 

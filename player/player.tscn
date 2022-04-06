@@ -1,12 +1,32 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/body.tscn" type="PackedScene" id=2]
 [ext_resource path="res://player/dir_checks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/hud.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sound/step_ultralow.wav" type="AudioStream" id=5]
+[ext_resource path="res://sound/hurt.wav" type="AudioStream" id=6]
 
 [node name="Player" type="Spatial"]
 script = ExtResource( 1 )
+
+[node name="StepTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="Step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -29.0
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -25.0
+pitch_scale = 0.5
+
+[node name="Land" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -20.0
+pitch_scale = 1.5
 
 [node name="Body" parent="." instance=ExtResource( 2 )]
 
@@ -19,10 +39,12 @@ TargetPath = NodePath("../Body")
 [connection signal="direction_changed" from="." to="DirChecks" method="_on_Player_direction_changed"]
 [connection signal="jump" from="." to="Body" method="_on_Player_jump"]
 [connection signal="look_object" from="." to="HUD" method="_on_Player_look_object"]
+[connection signal="scroll" from="." to="HUD" method="_on_Player_scroll"]
 [connection signal="tree_entered" from="." to="HUD" method="_on_Player_tree_entered"]
 [connection signal="uncrouch" from="." to="Body" method="_on_Player_uncrouch"]
+[connection signal="fallen" from="Body" to="." method="_on_Body_fallen"]
+[connection signal="landed" from="Body" to="." method="_on_Body_landed"]
 [connection signal="send_height" from="Body" to="DirChecks" method="_on_Body_send_height"]
-[connection signal="tree_entered" from="Body/BodyShape" to="Body" method="_on_BodyShape_tree_entered"]
 [connection signal="look_object" from="Body/Head" to="." method="_on_Head_look_object"]
 [connection signal="can_step" from="DirChecks" to="Body" method="_on_DirChecks_can_step"]
 
