@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Depper_russian_sounds.mp3-0e61b29b031226f8c7c3b89b6db7de2d.mp3str"
+
+[deps]
+
+source_file="res://objects/voiceclips/Depper_russian_sounds.mp3"
+dest_files=[ "res://.import/Depper_russian_sounds.mp3-0e61b29b031226f8c7c3b89b6db7de2d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

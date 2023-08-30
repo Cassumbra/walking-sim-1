@@ -10,5 +10,6 @@ script = ExtResource( 3 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="World" parent="." instance=ExtResource( 1 )]
+
 [connection signal="change_scene" from="." to="Player" method="_on_Main_change_scene"]
 [connection signal="ready" from="Player" to="." method="_on_Player_ready"]

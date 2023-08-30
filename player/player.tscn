@@ -34,6 +34,7 @@ pitch_scale = 1.5
 TargetPath = NodePath("../Body")
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+
 [connection signal="crouch" from="." to="Body" method="_on_Player_crouch"]
 [connection signal="direction_changed" from="." to="Body" method="_on_Player_direction_changed"]
 [connection signal="direction_changed" from="." to="DirChecks" method="_on_Player_direction_changed"]
@@ -49,7 +50,5 @@ TargetPath = NodePath("../Body")
 [connection signal="can_step" from="DirChecks" to="Body" method="_on_DirChecks_can_step"]
 
 [editable path="Body"]
-
 [editable path="DirChecks"]
-
 [editable path="HUD"]

@@ -72,6 +72,8 @@ func _physics_process(delta):
 	
 	movement = move_and_slide_with_snap(movement, snap, Vector3.UP, false, 4, PI/4)
 	
+	print()
+	
 	if not is_on_floor():
 		in_air = true
 		gravity_vec += Vector3.DOWN * GRAVITY * delta
