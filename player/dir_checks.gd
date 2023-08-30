@@ -1,4 +1,4 @@
-extends Spatial
+extends Node3D
 
 const WAIT_TIME = 0.01
 var wait_time = WAIT_TIME
@@ -9,14 +9,14 @@ var direction = Vector3(0, 0, 0)
 
 signal can_step()
 
-onready var head_check = $HeadCheck
-onready var body_check = $BodyCheck
-onready var feet_check = $FeetCheck
+@onready var head_check = $HeadCheck
+@onready var body_check = $BodyCheck
+@onready var feet_check = $FeetCheck
 
-export (NodePath) var TargetPath
+@export (NodePath) var TargetPath
 
-onready var TargetNode = get_node(TargetPath)
-onready var StartOffset = self.transform.origin - TargetNode.transform.origin
+@onready var TargetNode = get_node(TargetPath)
+@onready var StartOffset = self.transform.origin - TargetNode.transform.origin
 
 var collider
 var collider_shape
@@ -26,9 +26,9 @@ var nearest_point
 func _physics_process(delta):
 	self.transform.origin = TargetNode.transform.origin + StartOffset
 	
-	head_check.cast_to = Vector3(direction.x*cast_dist, 0, direction.z*cast_dist)
-	body_check.cast_to = Vector3(direction.x*cast_dist, 0, direction.z*cast_dist)
-	feet_check.cast_to = Vector3(direction.x*cast_dist, 0, direction.z*cast_dist)
+	head_check.target_position = Vector3(direction.x*cast_dist, 0, direction.z*cast_dist)
+	body_check.target_position = Vector3(direction.x*cast_dist, 0, direction.z*cast_dist)
+	feet_check.target_position = Vector3(direction.x*cast_dist, 0, direction.z*cast_dist)
 	
 	if not head_check.is_colliding() and not body_check.is_colliding() and feet_check.is_colliding():
 		wait_time -= delta
@@ -41,6 +41,6 @@ func _on_Player_direction_changed(d):
 	direction = d
 
 func _on_Body_send_height(height):
-	head_check.translation.y = height
-	body_check.translation.y = -height + height/1.5 + 0.1
-	feet_check.translation.y = -height + 0.1
+	head_check.position.y = height
+	body_check.position.y = -height + height/1.5 + 0.1
+	feet_check.position.y = -height + 0.1

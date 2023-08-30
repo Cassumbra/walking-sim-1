@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/step.wav-2fa975461cc5d245f36d76bca3abe08d.sample"
+type="AudioStreamWAV"
+uid="uid://csc5dnagbgph2"
+path="res://.godot/imported/step.wav-2fa975461cc5d245f36d76bca3abe08d.sample"
 
 [deps]
 
 source_file="res://sound/step.wav"
-dest_files=[ "res://.import/step.wav-2fa975461cc5d245f36d76bca3abe08d.sample" ]
+dest_files=["res://.godot/imported/step.wav-2fa975461cc5d245f36d76bca3abe08d.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

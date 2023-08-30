@@ -1,17 +1,17 @@
-extends Spatial
+extends Node3D
 
 const MOUSE_SENSITIVITY = 0.20
 
-onready var body = $Body
-onready var body_shape = $Body/BodyShape
-onready var head = $Body/Head
-onready var dir_checks = $DirChecks
-onready var hud = $HUD
+@onready var body = $Body
+@onready var body_shape = $Body/BodyShape
+@onready var head = $Body/Head
+@onready var dir_checks = $DirChecks
+@onready var hud = $HUD
 
-onready var step_timer = $StepTimer
-onready var step = $Step
-onready var hurt = $Hurt
-onready var land = $Land
+@onready var step_timer = $StepTimer
+@onready var step = $Step
+@onready var hurt = $Hurt
+@onready var land = $Land
 
 var direction = Vector3()
 
@@ -34,14 +34,14 @@ func _process(_delta):
 
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() != Input.MOUSE_MODE_VISIBLE:
-		body.rotate_y(deg2rad(-event.relative.x * MOUSE_SENSITIVITY))
-		head.rotate_x(deg2rad(-event.relative.y * MOUSE_SENSITIVITY))
+		body.rotate_y(deg_to_rad(-event.relative.x * MOUSE_SENSITIVITY))
+		head.rotate_x(deg_to_rad(-event.relative.y * MOUSE_SENSITIVITY))
 		head.rotation.x = clamp(head.rotation.x, -PI/2, PI/2)
 		
 	if event is InputEventMouseButton and event.is_pressed():
-		if event.button_index == BUTTON_WHEEL_UP:
+		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			emit_signal("scroll", "up")
-		elif event.button_index == BUTTON_WHEEL_DOWN:
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			emit_signal("scroll", "down")
 
 
@@ -102,7 +102,7 @@ func play_sample(voice):
 	var player = voice.duplicate()
 	add_child(player)
 	player.play()
-	yield(player, "finished")
+	await player.finished
 	player.queue_free()
 
 func _on_Body_fallen():

@@ -1,28 +1,28 @@
-extends KinematicBody
+extends CharacterBody3D
 
-export var object_name = "NULL"
+@export var object_name = "NULL"
 
-export(String, "None", "Talk", "Interact") var interact_type = "None"
+@export var interact_type = "None" # (String, "None", "Talk", "Interact")
 
-export(Array, String, MULTILINE) var interact_text = ["TEXT NO LOAD SORRY I ERROR TRY A FURTHER"]
+@export var interact_text = ["TEXT NO LOAD SORRY I ERROR TRY A FURTHER"] # (Array, String, MULTILINE)
 
-export(String, "Random", "Ordered") var text_order = "Ordered"
+@export var text_order = "Ordered" # (String, "Random", "Ordered")
 
 #Any index within the interact_text array
 var text_pointer = 0
 
-export(Array, Texture) var sprites
+@export var sprites # (Array, Texture2D)
 
-export(Array, AudioStream) var voices
+@export var voices # (Array, AudioStream)
 
-export var snap_to_ground = true
+@export var snap_to_ground = true
 
 var voice_index = 0
 
-onready var sprite = $Sprite3D
-onready var voice = $Voice
+@onready var sprite = $Sprite3D
+@onready var voice = $Voice
 
-onready var world
+@onready var world
 
 var player
 var player_pos
@@ -35,9 +35,9 @@ signal send_object(bind)
 
 #End of defining corruption mechanic variables.
 
-export(String, "Y-Billboard", "Y-Billboard Flip", "Billboard", "Flat", "Spin") var rotation_type = "Y-Billboard"
+@export var rotation_type = "Y-Billboard" # (String, "Y-Billboard", "Y-Billboard Flip", "Billboard", "Flat", "Spin")
 
-export(bool) var flip_h
+@export var flip_h: bool
 
 func _ready():
 	sprites[0] = sprite.texture
@@ -45,13 +45,16 @@ func _ready():
 	voice.stream = voices[randi() % voices.size()]
 	
 	if snap_to_ground:
-		move_and_slide_with_snap(Vector3(0, 0, 0), Vector3.DOWN, Vector3.UP)
+		set_velocity(Vector3(0, 0, 0))
+		# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `Vector3.DOWN`
+		set_up_direction(Vector3.UP)
+		move_and_slide()
 	
 	
 	#Make sure to also update world whenever world scene is changed!!
 	#world = get_node("..")
 	world = get_owner()
-	connect("send_object", world, "_on_Object_send_object")
+	connect("send_object", Callable(world, "_on_Object_send_object"))
 	emit_signal("send_object", self)
 
 	
@@ -82,7 +85,7 @@ func play_sample():
 	var player = voice.duplicate()
 	add_child(player)
 	player.play()
-	yield(player, "finished")
+	await player.finished
 	player.queue_free()
 	
 func interact(interactor):

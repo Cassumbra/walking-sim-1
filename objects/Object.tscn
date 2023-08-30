@@ -1,27 +1,27 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://dgyd3dbk4k46w"]
 
-[ext_resource path="res://objects/object.gd" type="Script" id=1]
-[ext_resource path="res://objects/voiceclips/null.wav" type="AudioStream" id=2]
-[ext_resource path="res://objects/sprites/null.png" type="Texture" id=3]
+[ext_resource type="Script" path="res://objects/object.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://dcvyg2bwaamj3" path="res://objects/voiceclips/null.wav" id="2"]
+[ext_resource type="Texture2D" uid="uid://df07tm15l2hdc" path="res://objects/sprites/null.png" id="3"]
 
-[sub_resource type="CapsuleShape" id=1]
-radius = 1.71611
+[sub_resource type="CapsuleShape3D" id="1"]
+radius = 0.461926
 height = 0.923852
 
-[node name="Object" type="KinematicBody"]
+[node name="Object" type="CharacterBody3D"]
 collision_layer = 4
-script = ExtResource( 1 )
-sprites = [ ExtResource( 3 ) ]
-voices = [ ExtResource( 2 ) ]
+script = ExtResource("1")
+sprites = [ExtResource("3")]
+voices = [ExtResource("2")]
 rotation_type = "Flat"
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 1 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0)
+shape = SubResource("1")
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 2 )
-unit_db = 4.0
+stream = ExtResource("2")
+volume_db = 4.0
 max_db = 6.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
@@ -29,4 +29,4 @@ layers = 512
 pixel_size = 0.1
 shaded = true
 alpha_cut = 2
-texture = ExtResource( 3 )
+texture = ExtResource("3")

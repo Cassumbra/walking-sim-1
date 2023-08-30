@@ -1,18 +1,18 @@
-extends Spatial
+extends Node3D
 var offset = 6
 
-onready var eyes = $Eyes
+@onready var eyes = $Eyes
 
-onready var look_direction = $LookDirection
+@onready var look_direction = $LookDirection
 var look_distance = 12
 signal look_object(object)
 
-onready var default_object = $Object
+@onready var default_object = $Object
 var object
 
 
 func _process(_delta):
-	look_direction.cast_to = Vector3(0, 0, -look_distance)
+	look_direction.target_position = Vector3(0, 0, -look_distance)
 	
 	if look_direction.is_colliding():
 		object = look_direction.get_collider()
@@ -22,7 +22,7 @@ func _process(_delta):
 		
 
 func _on_Body_send_height(height):
-	translation.y = height - height/offset
+	position.y = height - height/offset
 	
 #Debug
 #func _ready():

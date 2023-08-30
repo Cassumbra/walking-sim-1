@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/Russian_sounds.wav-6ef0c28e4a6844f205be3aafabff1a4c.sample"
+type="AudioStreamWAV"
+uid="uid://jq8vxle01rwf"
+path="res://.godot/imported/Russian_sounds.wav-6ef0c28e4a6844f205be3aafabff1a4c.sample"
 
 [deps]
 
 source_file="res://objects/voiceclips/Russian_sounds.wav"
-dest_files=[ "res://.import/Russian_sounds.wav-6ef0c28e4a6844f205be3aafabff1a4c.sample" ]
+dest_files=["res://.godot/imported/Russian_sounds.wav-6ef0c28e4a6844f205be3aafabff1a4c.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

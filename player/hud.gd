@@ -1,14 +1,14 @@
 extends Control
 
-onready var crosshair = $CenterContainer/Crosshair
-onready var message = $MessagePanel/Message
-onready var fps = $FpsPanel/Fps
-onready var animation_player = $AnimationPlayer
-onready var color_rect = $ColorRect
+@onready var crosshair = $CenterContainer/Crosshair
+@onready var message = $MessagePanel/Message
+@onready var fps = $FpsPanel/Fps
+@onready var animation_player = $AnimationPlayer
+#@onready var color_rect = $ColorRect
 
-onready var transition = $Transition
-onready var click = $Transition/Click1
-onready var transition_timer = $Transition/Timer
+@onready var transition = $Transition
+@onready var click = $Transition/Click1
+@onready var transition_timer = $Transition/Timer
 
 var player
 var line_number = 0

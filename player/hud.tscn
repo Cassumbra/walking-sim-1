@@ -1,18 +1,18 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://player/hud.gd" type="Script" id=1]
-[ext_resource path="res://ui/none.png" type="Texture" id=2]
-[ext_resource path="res://ui/window1.png" type="Texture" id=3]
-[ext_resource path="res://ui/loading_cry.png" type="Texture" id=4]
-[ext_resource path="res://fonts/TTF/dogica.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://fonts/TTF/dogicabold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://ui/none.png" type="Texture2D" id=2]
+[ext_resource path="res://ui/window1.png" type="Texture2D" id=3]
+[ext_resource path="res://ui/loading_cry.png" type="Texture2D" id=4]
+[ext_resource path="res://fonts/TTF/dogica.ttf" type="FontFile" id=5]
+[ext_resource path="res://fonts/TTF/dogicabold.ttf" type="FontFile" id=6]
 [ext_resource path="res://sound/click1.wav" type="AudioStream" id=7]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=2]
-extra_spacing_top = 10
+[sub_resource type="FontFile" id=2]
+spacing_top = 10
 font_data = ExtResource( 5 )
 
 [node name="HUD" type="Control"]
@@ -28,9 +28,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -443.0
-margin_top = -260.0
-margin_right = 443.0
+offset_left = -443.0
+offset_top = -260.0
+offset_right = 443.0
 texture = ExtResource( 3 )
 patch_margin_left = 31
 patch_margin_top = 30
@@ -45,12 +45,12 @@ anchor_left = 0.031553
 anchor_top = 0.0886385
 anchor_right = 0.96
 anchor_bottom = 0.881
-margin_left = 0.0439997
-margin_top = -0.0460005
-margin_right = 0.440002
-margin_bottom = -0.0600128
-custom_fonts/bold_font = SubResource( 1 )
-custom_fonts/normal_font = SubResource( 2 )
+offset_left = 0.0439997
+offset_top = -0.0460005
+offset_right = 0.440002
+offset_bottom = -0.0600128
+theme_override_fonts/bold_font = SubResource( 1 )
+theme_override_fonts/normal_font = SubResource( 2 )
 text = "WASD to move. Mouse to turn. You can click on some things to interact with them.
 
 Press [KEY_LASER] to fire your laser."
@@ -63,8 +63,8 @@ anchor_left = 0.00677083
 anchor_top = 0.821476
 anchor_right = 0.0463333
 anchor_bottom = 0.885294
-margin_top = 0.094986
-margin_right = 0.0400009
+offset_top = 0.094986
+offset_right = 0.0400009
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 63.0117, 62.2705 )
 patch_margin_left = 29
@@ -80,10 +80,10 @@ anchor_left = 0.173032
 anchor_top = 0.227121
 anchor_right = 0.816675
 anchor_bottom = 0.796967
-margin_left = 0.0499992
-margin_top = -0.00600052
-margin_right = -0.00500488
-margin_bottom = -0.0460052
+offset_left = 0.0499992
+offset_top = -0.00600052
+offset_right = -0.00500488
+offset_bottom = -0.0460052
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -93,21 +93,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -63.52
-margin_top = -64.195
-margin_right = 64.48
-margin_bottom = 63.805
-rect_min_size = Vector2( 4, 4 )
+offset_left = -63.52
+offset_top = -64.195
+offset_right = 64.48
+offset_bottom = 63.805
+custom_minimum_size = Vector2( 4, 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Crosshair" type="TextureRect" parent="CenterContainer"]
-margin_left = 32.0
-margin_top = 32.0
-margin_right = 96.0
-margin_bottom = 96.0
-rect_min_size = Vector2( 64, 64 )
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 96.0
+offset_bottom = 96.0
+custom_minimum_size = Vector2( 64, 64 )
 texture = ExtResource( 2 )
 expand = true
 
@@ -134,10 +134,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -960.0
-margin_top = -510.0
-margin_right = 960.0
-margin_bottom = 510.0
+offset_left = -960.0
+offset_top = -510.0
+offset_right = 960.0
+offset_bottom = 510.0
 texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6

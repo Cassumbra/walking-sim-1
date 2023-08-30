@@ -2,5 +2,5 @@
 
 [ext_resource path="res://objects/behaviors/scene_changer.gd" type="Script" id=1]
 
-[node name="SceneChanger" type="Spatial"]
+[node name="SceneChanger" type="Node3D"]
 script = ExtResource( 1 )

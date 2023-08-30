@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/step_ultralow.wav-81881746704bcb3989ca6c27f5dd8fb6.sample"
+type="AudioStreamWAV"
+uid="uid://bf4uoh0a877l7"
+path="res://.godot/imported/step_ultralow.wav-81881746704bcb3989ca6c27f5dd8fb6.sample"
 
 [deps]
 
 source_file="res://sound/step_ultralow.wav"
-dest_files=[ "res://.import/step_ultralow.wav-81881746704bcb3989ca6c27f5dd8fb6.sample" ]
+dest_files=["res://.godot/imported/step_ultralow.wav-81881746704bcb3989ca6c27f5dd8fb6.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

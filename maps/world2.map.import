@@ -2,12 +2,13 @@
 
 importer="qodot.map"
 type="Resource"
-path="res://.import/world2.map-d2bd629774f30949982dfc49191907a5.tres"
+uid="uid://d3gsqnobpoano"
+path="res://.godot/imported/world2.map-d2bd629774f30949982dfc49191907a5.tres"
 
 [deps]
 
 source_file="res://maps/world2.map"
-dest_files=[ "res://.import/world2.map-d2bd629774f30949982dfc49191907a5.tres" ]
+dest_files=["res://.godot/imported/world2.map-d2bd629774f30949982dfc49191907a5.tres"]
 
 [params]
 

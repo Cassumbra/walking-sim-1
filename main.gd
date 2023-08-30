@@ -1,27 +1,27 @@
-extends Spatial
+extends Node3D
 
 signal send_player(player)
-signal change_scene(to_location)
+signal change_scene_to_file(to_location)
 
-onready var player = $Player
-onready var HUD = $Player/HUD
-onready var world = $World
-onready var new_world
+@onready var player = $Player
+@onready var HUD = $Player/HUD
+@onready var world = $World
+@onready var new_world
 
 
 func _ready():
-	connect("send_player", world, "_on_Main_send_player")
+	connect("send_player", Callable(world, "_on_Main_send_player"))
 	emit_signal("send_player", player)
 	
-	connect("change_scene", HUD, "_on_Main_change_scene")
+	connect("change_scene_to_file", Callable(HUD, "_on_Main_change_scene"))
 	
 	
 func change_world(from_scene, to_scene_path, to_location, rotation):
 	
-	emit_signal("change_scene", to_location)
+	emit_signal("change_scene_to_file", to_location)
 	
 	world.queue_free()
-	new_world = add_child(load(to_scene_path).instance())
+	add_child(load(to_scene_path).instantiate())
 	for child in get_children():
 		if child.name.countn("World") > 0:
 			world = child
@@ -37,7 +37,7 @@ func change_world(from_scene, to_scene_path, to_location, rotation):
 	
 	player.hud.scene_transition()
 	
-	connect("send_player", world, "_on_Main_send_player")
+	connect("send_player", Callable(world, "_on_Main_send_player"))
 	emit_signal("send_player", player)
 
 func _on_SceneChanger_change_scene():

@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/cass_voice1.wav-74c6895cd4c6d9b2e31603d1cc88be9e.sample"
+type="AudioStreamWAV"
+uid="uid://cgnncwfrogxeb"
+path="res://.godot/imported/cass_voice1.wav-74c6895cd4c6d9b2e31603d1cc88be9e.sample"
 
 [deps]
 
 source_file="res://objects/voiceclips/cass_voice1.wav"
-dest_files=[ "res://.import/cass_voice1.wav-74c6895cd4c6d9b2e31603d1cc88be9e.sample" ]
+dest_files=["res://.godot/imported/cass_voice1.wav-74c6895cd4c6d9b2e31603d1cc88be9e.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

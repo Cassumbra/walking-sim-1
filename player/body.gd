@@ -1,4 +1,4 @@
-extends KinematicBody
+extends CharacterBody3D
 
 signal landed()
 signal fallen()
@@ -21,12 +21,12 @@ const DEATH_POINT = -100
 var h_accel = 6
 
 var move_speed = NORM_SPEED
-var velocity = Vector3()
+#var velocity = Vector3()
 var direction = Vector3()
 var movement = Vector3()
 var h_velocity = Vector3()
 var snap = Vector3()
-var gravity_vec = Vector3()
+var gravity_direction = Vector3()
 var restore_point = Vector3(0, 0, 0)
 
 const NORM_JUMP_QUEUE = 0.15
@@ -37,13 +37,13 @@ var in_air = false
 
 var crouching = false
 
-onready var body_shape = $BodyShape
-onready var head = $Head
+@onready var body_shape = $BodyShape
+@onready var head = $Head
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	yield(get_tree().root, "ready")
+	await get_tree().root.ready
 	restore_point = global_transform.origin
 	emit_signal("send_height", body_shape.scale.y)
 
@@ -52,7 +52,7 @@ func _physics_process(delta):
 	if jump:
 		if is_on_floor():
 			#move_speed = move_speed * 2
-			gravity_vec = Vector3.UP * JUMP_POWER
+			gravity_direction = Vector3.UP * JUMP_POWER
 			snap = Vector3(0, 0, 0)
 		if jump_queue <= 0:
 			jump = false
@@ -65,18 +65,25 @@ func _physics_process(delta):
 		rotation = Vector3 (0, 0, 0)
 		head.rotation = Vector3(0, 0, 0)
 	
-	h_velocity = h_velocity.linear_interpolate(direction * move_speed, h_accel * delta)
-	movement.z = h_velocity.z + gravity_vec.z
-	movement.x = h_velocity.x + gravity_vec.x
-	movement.y = gravity_vec.y
+	h_velocity = h_velocity.lerp(direction * move_speed, h_accel * delta)
+	movement.z = h_velocity.z + gravity_direction.z
+	movement.x = h_velocity.x + gravity_direction.x
+	movement.y = gravity_direction.y
 	
-	movement = move_and_slide_with_snap(movement, snap, Vector3.UP, false, 4, PI/4)
+	set_velocity(movement)
+	# TODOConverter3To4 looks that snap in Godot 4 is float, not vector like in Godot 3 - previous value `snap`
+	set_up_direction(Vector3.UP)
+	set_floor_stop_on_slope_enabled(false)
+	set_max_slides(4)
+	set_floor_max_angle(PI/4)
+	move_and_slide()
+	movement = velocity
 	
 	print()
 	
 	if not is_on_floor():
 		in_air = true
-		gravity_vec += Vector3.DOWN * GRAVITY * delta
+		gravity_direction += Vector3.DOWN * GRAVITY * delta
 		h_accel = AIR_ACCEL
 		
 		#Diving!
@@ -84,14 +91,14 @@ func _physics_process(delta):
 			if movement.y < 0:
 				move_speed = NORM_DIVE_SPEED
 			elif !is_on_wall():
-				h_velocity = h_velocity.linear_interpolate(Vector3 (0, 0, 0), SPEED_KILL * delta)
+				h_velocity = h_velocity.lerp(Vector3 (0, 0, 0), SPEED_KILL * delta)
 				move_speed = NORM_SPEED / 100
 			
 	else:
 		if in_air:
 			emit_signal("landed")
 			in_air = false
-		gravity_vec = -get_floor_normal()
+		gravity_direction = -get_floor_normal()
 		snap = -get_floor_normal()
 		move_speed = NORM_SPEED
 		h_accel = NORMAL_ACCEL
@@ -99,7 +106,7 @@ func _physics_process(delta):
 		if crouching: move_speed = NORM_SPEED / 3.5
 		
 	if is_on_ceiling():
-		gravity_vec.y = -0.1
+		gravity_direction.y = -0.1
 		
 
 
