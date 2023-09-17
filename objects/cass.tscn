@@ -9,12 +9,12 @@ radius = 1.49257
 height = 4.70387
 
 [node name="Cass" instance=ExtResource("1")]
-sprites = [ExtResource("2")]
-voices = [ExtResource("3")]
-rotation_type = "Y-Billboard Flip"
 object_name = "Cass"
 interact_type = "Talk"
 interact_text = ["Hi, its me, Cass!"]
+sprites = [ExtResource("2")]
+voices = [ExtResource("3")]
+rotation_type = "Y-Billboard Flip"
 
 [node name="CollisionShape3D" parent="." index="0"]
 shape = SubResource("1")

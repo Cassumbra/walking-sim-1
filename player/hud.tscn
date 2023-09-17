@@ -1,29 +1,47 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://c8ffnnws8ik1w"]
 
-[ext_resource path="res://player/hud.gd" type="Script" id=1]
-[ext_resource path="res://ui/none.png" type="Texture2D" id=2]
-[ext_resource path="res://ui/window1.png" type="Texture2D" id=3]
-[ext_resource path="res://ui/loading_cry.png" type="Texture2D" id=4]
-[ext_resource path="res://fonts/TTF/dogica.ttf" type="FontFile" id=5]
-[ext_resource path="res://fonts/TTF/dogicabold.ttf" type="FontFile" id=6]
-[ext_resource path="res://sound/click1.wav" type="AudioStream" id=7]
+[ext_resource type="Script" path="res://player/hud.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bb0q3htuf5xt6" path="res://ui/none.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://8rlfljo4ixgp" path="res://ui/window1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://pr67ta6duuus" path="res://ui/loading_cry.png" id="4"]
+[ext_resource type="FontFile" uid="uid://8k8t0ight80v" path="res://fonts/TTF/dogica.ttf" id="5"]
+[ext_resource type="FontFile" uid="uid://cqdtaooj6lt73" path="res://fonts/TTF/dogicabold.ttf" id="6"]
+[ext_resource type="AudioStream" uid="uid://dxf5wcknl7pth" path="res://sound/click1.wav" id="7"]
 
-[sub_resource type="FontFile" id=1]
-font_data = ExtResource( 6 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("5")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/glyphs/0/advance = Vector2(0, 0)
+cache/0/16/0/glyphs/0/offset = Vector2(0, 0)
+cache/0/16/0/glyphs/0/size = Vector2(0, 0)
+cache/0/16/0/glyphs/0/uv_rect = Rect2(0, 0, 0, 0)
+cache/0/16/0/glyphs/0/texture_idx = -1
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id=2]
-spacing_top = 10
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("6")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
 
 [node name="MessagePanel" type="NinePatchRect" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -31,16 +49,14 @@ anchor_bottom = 1.0
 offset_left = -443.0
 offset_top = -260.0
 offset_right = 443.0
-texture = ExtResource( 3 )
+texture = ExtResource("3")
 patch_margin_left = 31
 patch_margin_top = 30
 patch_margin_right = 33
 patch_margin_bottom = 34
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Message" type="RichTextLabel" parent="MessagePanel"]
+layout_mode = 0
 anchor_left = 0.031553
 anchor_top = 0.0886385
 anchor_right = 0.96
@@ -49,33 +65,29 @@ offset_left = 0.0439997
 offset_top = -0.0460005
 offset_right = 0.440002
 offset_bottom = -0.0600128
-theme_override_fonts/bold_font = SubResource( 1 )
-theme_override_fonts/normal_font = SubResource( 2 )
+theme_override_fonts/normal_font = SubResource("2")
+theme_override_fonts/bold_font = SubResource("1")
 text = "WASD to move. Mouse to turn. You can click on some things to interact with them.
 
 Press [KEY_LASER] to fire your laser."
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="FpsPanel" type="NinePatchRect" parent="."]
+layout_mode = 0
 anchor_left = 0.00677083
 anchor_top = 0.821476
 anchor_right = 0.0463333
 anchor_bottom = 0.885294
 offset_top = 0.094986
 offset_right = 0.0400009
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 63.0117, 62.2705 )
+texture = ExtResource("3")
+region_rect = Rect2(0, 0, 63.0117, 62.2705)
 patch_margin_left = 29
 patch_margin_top = 33
 patch_margin_right = 31
 patch_margin_bottom = 32
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="Fps" type="RichTextLabel" parent="FpsPanel"]
+layout_mode = 0
 anchor_left = 0.173032
 anchor_top = 0.227121
 anchor_right = 0.816675
@@ -84,11 +96,10 @@ offset_left = 0.0499992
 offset_top = -0.00600052
 offset_right = -0.00500488
 offset_bottom = -0.0460052
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(4, 4)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -97,39 +108,29 @@ offset_left = -63.52
 offset_top = -64.195
 offset_right = 64.48
 offset_bottom = 63.805
-custom_minimum_size = Vector2( 4, 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Crosshair" type="TextureRect" parent="CenterContainer"]
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 96.0
-offset_bottom = 96.0
-custom_minimum_size = Vector2( 64, 64 )
-texture = ExtResource( 2 )
-expand = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2")
+expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Transition" type="Control" parent="."]
 visible = false
+anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect" type="ColorRect" parent="Transition"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Transition"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -138,15 +139,16 @@ offset_left = -960.0
 offset_top = -510.0
 offset_right = 960.0
 offset_bottom = 510.0
-texture = ExtResource( 4 )
-expand = true
+texture = ExtResource("4")
+expand_mode = 1
 stretch_mode = 6
 
 [node name="Click1" type="AudioStreamPlayer" parent="Transition"]
-stream = ExtResource( 7 )
+stream = ExtResource("7")
 volume_db = -10.0
 
 [node name="Timer" type="Timer" parent="Transition"]
 wait_time = 0.25
 one_shot = true
+
 [connection signal="timeout" from="Transition/Timer" to="." method="_on_Timer_timeout"]

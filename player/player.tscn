@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1"]
 [ext_resource type="PackedScene" path="res://player/body.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://player/dir_checks.tscn" id="3"]
-[ext_resource type="PackedScene" path="res://player/hud.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://c8ffnnws8ik1w" path="res://player/hud.tscn" id="4"]
 [ext_resource type="AudioStream" uid="uid://bf4uoh0a877l7" path="res://sound/step_ultralow.wav" id="5"]
 [ext_resource type="AudioStream" uid="uid://caiejymssra8d" path="res://sound/hurt.wav" id="6"]
 
@@ -34,41 +34,77 @@ pitch_scale = 1.5
 TargetPath = NodePath("../Body")
 
 [node name="HUD" parent="." instance=ExtResource("4")]
-layout_mode = 3
-anchors_preset = 15
 
 [node name="MessagePanel" parent="HUD" index="0"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.287
+anchor_top = 0.738
+anchor_right = 0.748
+anchor_bottom = 0.993
+offset_left = -1.03998
+offset_top = 0.23999
+offset_right = -0.160034
+offset_bottom = 0.139954
 
 [node name="Message" parent="HUD/MessagePanel" index="0"]
-layout_mode = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1.0
+offset_bottom = 0.0
 
 [node name="FpsPanel" parent="HUD" index="1"]
-layout_mode = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 58.0
+offset_top = 892.0
+offset_right = 118.0
+offset_bottom = 957.0
 
 [node name="Fps" parent="HUD/FpsPanel" index="0"]
-layout_mode = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1.0
+offset_bottom = 0.0
 
 [node name="CenterContainer" parent="HUD" index="2"]
-layout_mode = 0
-
-[node name="Crosshair" parent="HUD/CenterContainer" index="0"]
-layout_mode = 2
-expand_mode = 1
-
-[node name="Transition" parent="HUD" index="4"]
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="ColorRect" parent="HUD/Transition" index="0"]
-layout_mode = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 
 [node name="TextureRect" parent="HUD/Transition" index="1"]
-layout_mode = 0
-expand_mode = 1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 1920.0
+offset_bottom = 1020.0
 
 [connection signal="crouch" from="." to="Body" method="_on_Player_crouch"]
 [connection signal="direction_changed" from="." to="Body" method="_on_Player_direction_changed"]
-[connection signal="direction_changed" from="." to="DirChecks" method="_on_Player_direction_changed"]
 [connection signal="jump" from="." to="Body" method="_on_Player_jump"]
 [connection signal="look_object" from="." to="HUD" method="_on_Player_look_object"]
 [connection signal="scroll" from="." to="HUD" method="_on_Player_scroll"]

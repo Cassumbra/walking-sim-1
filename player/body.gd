@@ -79,8 +79,6 @@ func _physics_process(delta):
 	move_and_slide()
 	movement = velocity
 	
-	print()
-	
 	if not is_on_floor():
 		in_air = true
 		gravity_direction += Vector3.DOWN * GRAVITY * delta

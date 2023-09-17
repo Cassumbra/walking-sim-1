@@ -42,3 +42,7 @@ func change_world(from_scene, to_scene_path, to_location, rotation):
 
 func _on_SceneChanger_change_scene():
 	pass
+
+func _on_Player_ready():
+	# I don't know why this was connected, but maybe there was a reason?
+	pass

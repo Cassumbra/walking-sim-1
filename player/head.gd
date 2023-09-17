@@ -7,7 +7,7 @@ var offset = 6
 var look_distance = 12
 signal look_object(object)
 
-@onready var default_object = $Object
+@onready var default_object = get_node("/root/Main/World/DefaultObject")
 var object
 
 

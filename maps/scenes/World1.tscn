@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://drwq1egf0iqg"]
+[gd_scene load_steps=80 format=3 uid="uid://drwq1egf0iqg"]
 
 [ext_resource type="Script" path="res://maps/scenes/World.gd" id="1"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="2"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" path="res://objects/arizona_ranger.tscn" id="7"]
 [ext_resource type="Material" path="res://maps/textures/base/grass.tres" id="8"]
 [ext_resource type="PackedScene" path="res://maps/textures/base/signpost_flat_short_point.tscn" id="9"]
-[ext_resource type="PackedScene" path="res://objects/opening.tscn" id="10"]
+[ext_resource type="PackedScene" uid="uid://cu5vvqky48vqa" path="res://objects/opening.tscn" id="10"]
 [ext_resource type="PackedScene" path="res://objects/gobloid.tscn" id="11"]
 
 [sub_resource type="StandardMaterial3D" id="1"]
@@ -236,6 +236,28 @@ points = PackedVector3Array(-80, 16, 150, -80, 12, 150, -64, 12, 150, -64, 16, 1
 [sub_resource type="ConvexPolygonShape3D" id="65"]
 points = PackedVector3Array(-64, 14, 138, -80, 14, 138, -80, 12, 138, -64, 12, 138, -64, 16, 142, -80, 16, 142, -80, 16, 150, -80, 12, 150, -64, 12, 150, -64, 16, 150)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wgstk"]
+sky_top_color = Color(0.168627, 0.396078, 0.784314, 1)
+sky_horizon_color = Color(0.364706, 0.678431, 0.960784, 1)
+ground_bottom_color = Color(0.364706, 0.678431, 0.960784, 1)
+ground_horizon_color = Color(0.364706, 0.678431, 0.960784, 1)
+
+[sub_resource type="Sky" id="Sky_k2a7g"]
+sky_material = SubResource("ProceduralSkyMaterial_wgstk")
+
+[sub_resource type="Environment" id="Environment_vmrlv"]
+background_mode = 2
+sky = SubResource("Sky_k2a7g")
+fog_light_color = Color(0.364706, 0.678431, 0.960784, 1)
+fog_light_energy = 0.0
+fog_density = 0.21
+fog_aerial_perspective = 1.0
+fog_sky_affect = 0.0
+fog_height_density = 8.4211
+volumetric_fog_albedo = Color(0.364706, 0.678431, 0.960784, 1)
+volumetric_fog_emission = Color(0.364706, 0.678431, 0.960784, 1)
+volumetric_fog_sky_affect = 0.0
+
 [node name="World" type="Node3D"]
 script = ExtResource("1")
 
@@ -461,9 +483,9 @@ interact_text = ["Hail pardner. Press [SPACE] to giddy up!", "Press [SPACE] to j
 
 [node name="Cass" parent="." instance=ExtResource("6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7246, -4.17723, -117.158)
-rotation_type = "Y-Billboard"
 interact_text = ["Hehe. Hehehehe. HEHEHEHE!
 Hey, who are you? I'm not scheming! Go away!!", "Leave me alone, c'mon!", "Jeeze, give a girl some space.", "You probably already know this, but, if a girl tells you to back off in real life, you probably should. This is just a game, so its \"okay\", but keep it in mind, okay? Respect people."]
+rotation_type = "Y-Billboard"
 
 [node name="Cass2" parent="." instance=ExtResource("6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.54, 3.78522, -178.044)
@@ -493,10 +515,10 @@ interact_text = ["You have unlocked: MEGA FUCKER MODE.", "(FUCK OFF)"]
 
 [node name="Cass3" parent="." instance=ExtResource("6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -245.654, -36.1573, 11.5012)
-rotation_type = "Y-Billboard"
 interact_text = ["I do my best to be a good person, a kind person. I feel like its never enough.", "I feel like no matter what I do I'll end up fucking up somehow and making an ass out of myself.", "I'm always going to try, and I'm not going to let failures stop me from trying to be a good person and a better person, its just so depressing knowing I'm going to fuck up again in the future. It just keeps happening.", "I worry that one of these days I'm going to destroy myself, that I'm going to tear myself apart. Maybe from trying so hard to be good that its too much for me or from the fallout of one of my fuckups.", "I just wish it wasn't so hard. I wish being good was effortless. I wish I didn't feel so gross and awful all the time.
 
 I just want to trun my brain off and just be able to enjoy the good things without having to worry about ruining anything or about worrying in general."]
+rotation_type = "Y-Billboard"
 
 [node name="ArizonaRanger3" parent="." instance=ExtResource("7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.11293, 157.002)
@@ -515,5 +537,8 @@ to_scene_path = "res://maps/scenes/World2.tscn"
 [node name="Gobloid" parent="." instance=ExtResource("11")]
 transform = Transform3D(-3.25841e-07, 0, -1, 0, 2, 0, 2, 0, -1.62921e-07, -256.933, 68.7704, 118.98)
 interact_text = ["I'm not sure why I'm here... Gobloid sometimes appear in strange places."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vmrlv")
 
 [editable path="Opening"]

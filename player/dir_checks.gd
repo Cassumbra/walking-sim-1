@@ -13,7 +13,7 @@ signal can_step()
 @onready var body_check = $BodyCheck
 @onready var feet_check = $FeetCheck
 
-@export (NodePath) var TargetPath
+@export var TargetPath: NodePath
 
 @onready var TargetNode = get_node(TargetPath)
 @onready var StartOffset = self.transform.origin - TargetNode.transform.origin

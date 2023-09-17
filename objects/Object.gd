@@ -11,9 +11,9 @@ extends CharacterBody3D
 #Any index within the interact_text array
 var text_pointer = 0
 
-@export var sprites # (Array, Texture2D)
+@export var sprites: Array # (Array, Texture2D)
 
-@export var voices # (Array, AudioStream)
+@export var voices: Array # (Array, AudioStream)
 
 @export var snap_to_ground = true
 
@@ -27,7 +27,7 @@ var voice_index = 0
 var player
 var player_pos
 
-signal interact(interactor)
+signal interacted(interactor)
 signal send_object(bind)
 
 #Define variables for corruption mechanics here:
@@ -53,7 +53,8 @@ func _ready():
 	
 	#Make sure to also update world whenever world scene is changed!!
 	#world = get_node("..")
-	world = get_owner()
+	#world = get_owner()
+	world = get_node("/root/Main/World")
 	connect("send_object", Callable(world, "_on_Object_send_object"))
 	emit_signal("send_object", self)
 
@@ -90,7 +91,7 @@ func play_sample():
 	
 func interact(interactor):
 	play_sample()
-	emit_signal("interact", interactor)
+	emit_signal("interacted", interactor)
 
 func _on_World_send_player(p):
 	player = p
